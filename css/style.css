@@ -1,0 +1,312 @@
+:root {
+    --hover-color: rgba(162, 248, 228, 0.2);
+    --background-color: #f4fafe;
+    --main-font-color: #000;
+    --sm: 1.6rem;
+    --md: 1.8rem;
+    --lg: 2rem;
+    --h3: 2.2rem;
+    --h2: 2.4rem;
+    --h1: 5rem;
+}
+
+/* Estilos globales */
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+a, ul {
+    list-style: none;
+    text-decoration: none;
+    text-align: center;
+    font-size: var(--lg);
+}
+
+h2 {
+    font-size: var(--h2);
+    text-align: center;
+}
+
+h3 {
+    font-size: var(--h3);
+    text-align: center;
+}
+
+p {
+    font-size: var(--md);
+    text-align: center;
+}
+
+/* Estilos del header: landing page */
+
+header  {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 60px;
+}
+
+header ul  {
+    display: flex;
+    gap: 35px;
+}
+
+header ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header ul li a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #000;
+    transition-duration: .4s;
+}
+
+header ul li a:hover {
+    background-color: var(--hover-color);
+    padding: 10px 15px;
+    border: 1px solid rgb(60, 60, 60);
+    border-radius: 8px;
+}
+
+
+header ul li a img {
+    width: 25px;
+
+}
+
+/* Estilos del header: Compras */
+
+.header-compras {
+    background-color: rgba(209, 209, 209, .4);
+}
+
+
+/* Estilos del main: landing page*/
+
+main {
+    text-align: center;
+}
+
+main h1 {
+    font-size: var(--h1);
+    color: rgb(240, 248, 255);
+    margin: 50px auto;
+    width: 60%;
+}
+
+.hero {
+    background-image: url(/assets/img/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 150px 0;
+}
+
+.hero ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero ul li {
+    display: flex;
+    background-color: #fff;
+    padding: 20px;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    transition-duration: .4s;
+}
+
+.hero ul li:hover {
+    background-color: rgb(221, 246, 254);
+}
+
+.hero ul li input, .hero ul li select, .hero ul li button {
+    padding: 0px 25px;
+    border: 1px solid rgb(193, 193, 193);
+    border-radius: 4px;
+    height: 45px;
+    transition-duration: .4s;
+    font-size: 1.7rem;
+}
+
+.hero ul li select, section ul li button {
+    cursor: pointer;
+}
+
+.hero ul li input:hover, .hero ul li select:hover, .hero ul li button:hover {
+    background-color: rgb(241, 241, 241);   
+}
+
+.primer-li {
+    border-radius: 8px 0 0 8px;
+}
+
+.ultimo-li {
+    border-radius: 0 8px 8px 0;
+}
+
+.hero ul li img {
+    width: 25px;
+    cursor: pointer;
+}
+
+.informacion h2, .atencion h2 {
+    margin: 75px auto;
+    font-size: 4rem;
+}
+
+.informacion > ul, .atencion > ul {
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.informacion ul li, .atencion ul li {
+    width: 100%;
+}
+
+.informacion > ul li img, .atencion > ul li img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 15px;
+}
+
+.atencion {
+    padding-bottom: 50px;
+}
+
+/* Estilos del main: compras */
+
+.main-compras > h1 {
+    color: #000;
+}
+
+.contenedor-casas {
+    display: grid;
+    grid-template: repeat(3, auto) / repeat(4, auto);
+    grid-auto-rows: auto;
+    place-content: center;
+    place-items: center;
+    gap: 70px;
+    padding: 20px 0 75px 0;
+}
+
+.contenedor-casas-lista {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #000;
+    border-radius: 4px;
+    gap: 10px;
+    transition-duration: .5s;
+    cursor: pointer;
+}
+
+.contenedor-casas-lista:hover {
+    background-color: rgba(185, 185, 185, .2);
+}
+
+.contenedor-casas-lista p {
+    font-size: var(--sm);
+    text-align: start;
+}
+
+.contenedor-casas-lista h3 {
+    font-size: var(--md);
+    text-align: start;
+}
+
+.contenedor-casas-lista p, .contenedor-casas-lista h3, .contenedor-casas-lista ul {
+    padding: 0 0 10px 7px;
+}
+
+.contenedor-casas-lista > img {
+    width: 260px;
+} 
+
+.specs-casa {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+/* Estilos footer */
+footer {
+    background-color: #3ebecf;
+    color: #fff;
+    padding: 25px 0;
+}
+
+footer > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20  px 0;
+}
+
+footer > div > p {
+    font-size: var(--sm);
+    color: #000;
+    padding-right: 160px;
+}
+
+.lahaus-logo-titulo {
+    display: flex;
+    padding-left: 150px;
+    justify-content: start;
+    gap: 25px;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.lahaus-logo-titulo img {
+    width: 60px;
+}
+
+footer div h2 {
+    font-size: 2.6rem;
+}
+
+footer hr {
+    width: 85%;
+    margin: 0 auto;
+    height: 1.4px;
+    border: none;
+    background-color: #000;
+}
+
+.lista-redes {
+    display: flex;
+    gap: 25px;
+    padding: 15px 200px;
+}
+
+.lista-redes li a img {
+    width: 28px;
+}
+
+/* Responsive */
+
+@media (max-width: 1280px) {
+    .contenedor-casas {
+        grid-template-columns: repeat(3, auto);
+    }
+}
