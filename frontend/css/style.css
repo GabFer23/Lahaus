@@ -153,13 +153,13 @@ main h1 {
     background-color: rgb(241, 241, 241);   
 }
 
-.primer-li {
+/* .primer-li {
     border-radius: 8px 0 0 8px;
 }
 
 .ultimo-li {
     border-radius: 0 8px 8px 0;
-}
+} */
 
 .hero ul li img {
     width: 25px;
@@ -202,12 +202,13 @@ main h1 {
 
 .contenedor-casas {
     display: grid;
-    grid-template: repeat(3, auto) / repeat(4, auto);
-    grid-auto-rows: auto;
-    place-content: center;
-    place-items: center;
-    gap: 70px;
-    padding: 20px 0 75px 0;
+    grid-template: repeat(autofill, minmax(200px, 1fr));
+    padding: 20px;
+    /* grid-auto-rows: auto; */
+    /* place-content: center; */
+    /* place-items: center; */
+    gap: 20px;
+    /* padding: 20px 0 75px 0; */
 }
 
 .contenedor-casas-lista {
@@ -239,7 +240,7 @@ main h1 {
 }
 
 .contenedor-casas-lista > img {
-    width: 260px;
+    width: 100%;
 } 
 
 .specs-casa {
@@ -259,7 +260,7 @@ footer > div {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 20  px 0;
+    margin: 20px 0;
 }
 
 footer > div > p {
