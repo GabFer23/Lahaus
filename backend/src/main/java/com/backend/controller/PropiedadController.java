@@ -112,8 +112,8 @@ public class PropiedadController {
             propiedadExistente.setTelefono(propiedad.getTelefono());
             propiedadExistente.setCorreo(propiedad.getCorreo());
 
-            propiedadService.save(propiedadExistente);
-            return new ResponseEntity<>("Actualizado correctamente", HttpStatus.OK);
+            Propiedad propiedadActualizada = propiedadService.save(propiedadExistente);
+            return new ResponseEntity<>(propiedadActualizada, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
         }
