@@ -89,14 +89,13 @@ header ul li a img {
 
 }
 
-/* Estilos del header: Compras, Ventas */
+/* Estilos del header: Compras */
 
-.header-compras, .header-ventas {
+.header-compras {
     background-color: rgba(209, 209, 209, .4);
 }
 
-
-/* Estilos del main: landing page */
+/* Estilos del main: landing page*/
 
 main {
     text-align: center;
@@ -110,7 +109,7 @@ main h1 {
 }
 
 .hero {
-    background-image: url(/assets/img/hero.jpg);
+    background-image: url(/frontend/assets/img/hero.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     padding: 150px 0;
