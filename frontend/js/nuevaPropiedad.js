@@ -1,5 +1,5 @@
 import { lahausApi } from './api/index.js';
-import { generarOptions, getDataOptions } from './helpers/index.js';
+import { generarOptions, getDataOptions, setUpImages } from './helpers/index.js';
 // !========================================================================================
 
 const generatedDataSelect = document.querySelectorAll('.generated-data');
@@ -66,6 +66,35 @@ const handleSubmit = (e) => {
     images.push(input.value);
   });
 
-  console.log(propiedad);
-  console.log(images);
+  savePropiedad(propiedad, images);
 };
+
+const savePropiedad = async (propiedad, images) => {
+  try {
+    const { data } = await lahausApi.post(`/propiedad`, {
+      ...propiedad,
+    });
+
+    const { id: idPropiedad } = data;
+
+    // ? Crear un objeto con el id de la propiedad a la que pertencerá la imagen
+    const imgObjects = setUpImages(idPropiedad, images);
+
+    // ? Guardar cada imagen
+    imgObjects.forEach(saveImage);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+// !========================================================================================
+
+const saveImage = async (imagen) => {
+  try {
+    await lahausApi.post(`/imagen`, { ...imagen });
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+// !========================================================================================
