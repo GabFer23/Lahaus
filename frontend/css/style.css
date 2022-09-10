@@ -27,7 +27,8 @@ body {
     background-color: var(--background-color);
 }
 
-a, ul {
+a,
+ul {
     list-style: none;
     text-decoration: none;
     text-align: center;
@@ -51,13 +52,13 @@ p {
 
 /* Estilos del header: landing page */
 
-header  {
+header {
     display: flex;
     justify-content: space-between;
     padding: 15px 60px;
 }
 
-header ul  {
+header ul {
     display: flex;
     gap: 35px;
 }
@@ -109,7 +110,7 @@ main h1 {
 }
 
 .hero {
-    background-image: url(/frontend/assets/img/hero.jpg);
+    background-image: url('../assets/img/hero.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     padding: 150px 0;
@@ -135,7 +136,9 @@ main h1 {
     background-color: rgb(221, 246, 254);
 }
 
-.hero ul li input, .hero ul li select, .hero ul li button {
+.hero ul li input,
+.hero ul li select,
+.hero ul li button {
     padding: 0px 25px;
     border: 1px solid rgb(193, 193, 193);
     border-radius: 4px;
@@ -144,12 +147,15 @@ main h1 {
     font-size: 1.7rem;
 }
 
-.hero ul li select, section ul li button {
+.hero ul li select,
+section ul li button {
     cursor: pointer;
 }
 
-.hero ul li input:hover, .hero ul li select:hover, .hero ul li button:hover {
-    background-color: rgb(241, 241, 241);   
+.hero ul li input:hover,
+.hero ul li select:hover,
+.hero ul li button:hover {
+    background-color: rgb(241, 241, 241);
 }
 
 .primer-li {
@@ -165,12 +171,14 @@ main h1 {
     cursor: pointer;
 }
 
-.informacion h2, .atencion h2 {
+.informacion h2,
+.atencion h2 {
     margin: 75px auto;
     font-size: 4rem;
 }
 
-.informacion > ul, .atencion > ul {
+.informacion>ul,
+.atencion>ul {
     width: 60%;
     margin: 0 auto;
     display: flex;
@@ -179,11 +187,13 @@ main h1 {
     gap: 25px;
 }
 
-.informacion ul li, .atencion ul li {
+.informacion ul li,
+.atencion ul li {
     width: 100%;
 }
 
-.informacion > ul li img, .atencion > ul li img {
+.informacion>ul li img,
+.atencion>ul li img {
     width: 120px;
     height: 120px;
     margin-bottom: 15px;
@@ -195,7 +205,8 @@ main h1 {
 
 /* Estilos del main: compras, ventas */
 
-.main-compras > h1, .main-ventas > h1  {
+.main-compras>h1,
+.main-ventas>h1 {
     color: #000;
     font-size: 4.5rem;
 }
@@ -234,13 +245,15 @@ main h1 {
     text-align: start;
 }
 
-.contenedor-casas-lista p, .contenedor-casas-lista h3, .contenedor-casas-lista ul {
+.contenedor-casas-lista p,
+.contenedor-casas-lista h3,
+.contenedor-casas-lista ul {
     padding: 0 0 10px 7px;
 }
 
-.contenedor-casas-lista > img {
+.contenedor-casas-lista>img {
     width: 260px;
-} 
+}
 
 .specs-casa {
     display: flex;
@@ -262,7 +275,10 @@ main h1 {
     margin: 0 auto;
 }
 
-.contenedor-formulario input, .contenedor-formulario label, .contenedor-formulario textarea, .contenedor-formulario select {
+.contenedor-formulario input,
+.contenedor-formulario label,
+.contenedor-formulario textarea,
+.contenedor-formulario select {
     padding: 10px;
     overflow: auto;
     border-radius: 4px;
@@ -270,7 +286,9 @@ main h1 {
     transition-duration: .5s;
 }
 
-.contenedor-formulario input:hover, .contenedor-formulario textarea:hover, .contenedor-formulario select:hover {
+.contenedor-formulario input:hover,
+.contenedor-formulario textarea:hover,
+.contenedor-formulario select:hover {
     background-color: rgba(221, 221, 221, .4);
 }
 
@@ -279,7 +297,8 @@ main h1 {
     margin: 35px auto;
 }
 
-.subform-left, .subform-right {
+.subform-left,
+.subform-right {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -290,7 +309,9 @@ main h1 {
     margin: 0 auto;
 }
 
-.contenedor-label-input-select label, .contenedor-label-input-select input, .contenedor-label-input-select select {
+.contenedor-label-input-select label,
+.contenedor-label-input-select input,
+.contenedor-label-input-select select {
     width: 100%;
     margin-bottom: 20px;
 }
@@ -298,11 +319,11 @@ main h1 {
 .label-texto-img {
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
     gap: 10px;
 }
 
-.label-texto-img > img {
+.label-texto-img>img {
     width: 45px;
 }
 
@@ -321,7 +342,7 @@ main h1 {
     border-radius: 50%;
 }
 
-#subir-imagenes-propiedad > img {
+#subir-imagenes-propiedad>img {
     width: 75px;
     cursor: pointer;
 }
@@ -334,11 +355,11 @@ main h1 {
     gap: 30px;
 }
 
-.contenedor-contacto > input {
+.contenedor-contacto>input {
     width: 30%;
 }
 
-.contenedor-contacto > button {
+.contenedor-contacto>button {
     padding: 15px 35px;
     border-radius: 8px;
     font-size: var(--lg);
@@ -347,8 +368,8 @@ main h1 {
     transition-duration: .5s;
 }
 
-.contenedor-contacto > button:hover {
-    background-color: rgba(221, 221, 221, .9);   
+.contenedor-contacto>button:hover {
+    background-color: rgba(221, 221, 221, .9);
 }
 
 /* Estilos footer */
@@ -358,14 +379,14 @@ footer {
     padding: 25px 0;
 }
 
-footer > div {
+footer>div {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 20px 0;
 }
 
-footer > div > p {
+footer>div>p {
     font-size: var(--sm);
     color: #000;
     padding-right: 160px;

@@ -1,0 +1,16 @@
+export let params = {
+  page: 1,
+  pageSize: 10,
+  sortField: 'fechaCreacion',
+  sortDir: 'desc',
+  q: '',
+  categoria: 0,
+  habitaciones: 0,
+  wc: 0,
+  estrato: 0,
+  objetivo: 0,
+  estado: 0,
+  localidad: 0,
+  min: 0,
+  max: 0,
+};

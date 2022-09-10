@@ -1,0 +1,50 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+a,
+a>* {
+    text-decoration: none !important;
+}
+
+.fa-solid {
+    pointer-events: none;
+}
+
+.navbar-brand {
+    font-family: 'Shadows Into Light', cursive;
+}
+
+.form-control,
+.form-select {
+    box-shadow: none !important;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #212529 !important;
+}
+
+.filter-form .form-control,
+.filter-form .form-select,
+.filter-form .btn,
+.filter-form .input-group-text {
+    border-radius: 0 !important;
+}
+
+.filter-form__inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .25rem;
+}
+
+@media (max-width: 560px) {
+    .filter-form__inner {
+        display: none;
+    }
+
+    .xs-none {
+        display: none;
+    }
+}
