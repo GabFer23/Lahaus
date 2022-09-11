@@ -13,8 +13,17 @@ public class LocalidadService {
     @Autowired
     private LocalidadRepository localidadRepository;
     
-    public List<Localidad> getAll() {
+    public List<Localidad> listAll() {
         return localidadRepository.findAll(Sort.by("id"));
     }
-    
+    public Localidad save(Localidad localidad) {
+        return localidadRepository.save(localidad);
+    }
+        
+    public Localidad getById(int id) {
+        return localidadRepository.findById(id).get();
+    }
+    public void delete(int id) {
+        localidadRepository.deleteById(id);
+    }   
 }
