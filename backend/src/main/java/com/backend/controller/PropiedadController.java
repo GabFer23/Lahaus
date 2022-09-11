@@ -71,7 +71,7 @@ public class PropiedadController {
     public ResponseEntity<?> listarUnaPropiedad(@PathVariable int id) {
         try {
 
-            Propiedad propiedad = propiedadService.get(id);
+            Propiedad propiedad = propiedadService.getById(id);
             return new ResponseEntity<>(propiedad, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
@@ -95,7 +95,7 @@ public class PropiedadController {
     @PutMapping("/{id}")
     public ResponseEntity<?> actualizarPropiedad(@PathVariable int id, @RequestBody Propiedad propiedad) {
         try {
-            Propiedad propiedadExistente = propiedadService.get(id);
+            Propiedad propiedadExistente = propiedadService.getById(id);
 
             propiedadExistente.setTitulo(propiedad.getTitulo());
             propiedadExistente.setDescripcion(propiedad.getDescripcion());

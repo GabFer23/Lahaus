@@ -58,7 +58,7 @@ public class PropiedadService {
         return propiedadRepository.save(propiedad);
     }
 
-    public Propiedad get(int id) {
+    public Propiedad getById(int id) {
         return propiedadRepository.findById(id).get();
     }
 

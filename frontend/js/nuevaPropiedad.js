@@ -58,7 +58,7 @@ const handleSubmit = (e) => {
 
     // ? Obtener nombre y valor de los input que quedan (tipo text, tipo tel, tipo email)
     // ? Estos datos se agregar al objeto propiedad
-    propiedad[inputs[i].name] = inputs[i].value;
+    propiedad[inputs[i].name] = inputs[i].value.trim();
   }
 
   // ? Agregar los valores de la url de las imagenes en el arreglo imagenes
@@ -72,6 +72,7 @@ const handleSubmit = (e) => {
 const savePropiedad = async (propiedad, images) => {
   try {
     const { data } = await lahausApi.post(`/propiedad`, {
+      // ? Enviar todos los datos que tiene el objeto propiedad
       ...propiedad,
     });
 
