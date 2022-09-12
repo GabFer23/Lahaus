@@ -13,8 +13,21 @@ export const savePropiedad = async (propiedad, images) => {
     const imgObjects = setUpImages(idPropiedad, images);
 
     imgObjects.forEach(saveImage);
+
+    Swal.fire({
+      icon: 'success',
+      title: 'Propiedad Guardada',
+      showConfirmButton: false,
+      timer: 1500,
+      allowOutsideClick: false,
+      didClose: () => (window.location.href = 'index.html'),
+    });
   } catch (error) {
     console.error(error);
+    Swal.fire({
+      icon: 'error',
+      text: `${error.message}`,
+    });
   }
 };
 

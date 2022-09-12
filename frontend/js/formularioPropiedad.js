@@ -64,6 +64,4 @@ const handleSubmit = (e) => {
   });
 
   savePropiedad(propiedad, images);
-  alert('Propiedad guardada correctamente');
-  window.location.href = 'index.html';
 };

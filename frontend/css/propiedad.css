@@ -1,0 +1,7 @@
+.carousel img {
+    height: 25vw;
+    max-height: 550px;
+    min-height: 250px;
+    object-fit: cover;
+    object-position: center;
+}
