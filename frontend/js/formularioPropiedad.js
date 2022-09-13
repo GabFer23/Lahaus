@@ -37,6 +37,10 @@ const handleSubmit = (e) => {
   const images = [];
 
   for (let i = 0; i < inputs.length; i++) {
+    if (inputs[i].value === '') return;
+
+    if (inputs[i].type === 'number' && Number(inputs[i].value) !== parseInt(inputs[i].value)) return;
+
     if (
       inputs[i].type === 'number' ||
       (inputs[i].localName === 'select' &&
@@ -63,5 +67,6 @@ const handleSubmit = (e) => {
     images.push(input.value);
   });
 
-  savePropiedad(propiedad, images);
+  console.log(propiedad);
+  // savePropiedad(propiedad, images);
 };

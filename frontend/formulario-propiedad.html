@@ -54,13 +54,24 @@
                     </div>
                     <div class="card-body">
 
-                        <form id="frmGuardarPropiedad">
+                        <form id="frmGuardarPropiedad" class="needs-validation" novalidate>
 
-                            <input name="titulo" type="text" class="form-input form-control mb-1" placeholder="Título"
-                                maxlength="1000" required>
+                            <div class="my-2">
+                                <input name="titulo" type="text" class="form-input form-control mb-1"
+                                    placeholder="Título" maxlength="1000" required>
+                                <div class="invalid-feedback">
+                                    Ingresa un título válido
+                                </div>
+                            </div>
 
-                            <textarea name="descripcion" rows="5" class="form-input form-control mb-1"
-                                placeholder="Descripción" required></textarea>
+
+                            <div class="my-2">
+                                <textarea name="descripcion" rows="5" class="form-input form-control mb-1"
+                                    placeholder="Descripción" required></textarea>
+                                <div class="invalid-feedback">
+                                    Ingresa una descripción válida
+                                </div>
+                            </div>
 
                             <div class="row">
 
@@ -69,6 +80,9 @@
                                         <span class="input-group-text">Precio</span>
                                         <input name="precio" type="number" class="form-input form-control" required
                                             min="0">
+                                        <div class="invalid-feedback">
+                                            Ingresa un precio válido
+                                        </div>
                                     </div>
                                 </div>
 
@@ -79,6 +93,9 @@
                                             class="form-input backend-data form-select" required>
                                             <option value="" hidden>Selecciona</option>
                                         </select>
+                                        <div class="invalid-feedback">
+                                            Seleccione un objetivo
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -92,6 +109,9 @@
                                             class="form-input generated-data form-select" required>
                                             <option value="" hidden>Selecciona</option>
                                         </select>
+                                        <div class="invalid-feedback">
+                                            Seleccione la cantidad de habitaciones
+                                        </div>
                                     </div>
                                 </div>
 
@@ -102,6 +122,9 @@
                                             required>
                                             <option value="" hidden>Selecciona</option>
                                         </select>
+                                        <div class="invalid-feedback">
+                                            Seleccione la cantidad de baños
+                                        </div>
                                     </div>
                                 </div>
 
@@ -113,6 +136,9 @@
                                     <div class="input-group">
                                         <span class="input-group-text">Dirección</span>
                                         <input name="direccion" type="text" class="form-input form-control" required>
+                                        <div class="invalid-feedback">
+                                            Ingrese una dirección válida
+                                        </div>
                                     </div>
                                 </div>
 
@@ -122,6 +148,9 @@
                                         <input name="area" type="number" class="form-input form-control" required
                                             min="0">
                                         <span class="input-group-text">m²</span>
+                                        <div class="invalid-feedback">
+                                            Ingrese un área válida
+                                        </div>
                                     </div>
                                 </div>
 
@@ -136,6 +165,9 @@
                                             class="form-input generated-data form-select" required>
                                             <option value="" hidden>Selecciona</option>
                                         </select>
+                                        <div class="invalid-feedback">
+                                            Seleccione un estrato
+                                        </div>
                                     </div>
                                 </div>
 
@@ -145,6 +177,9 @@
                                         <select name="estado" class="form-input backend-data form-select" required>
                                             <option value="" hidden>Selecciona</option>
                                         </select>
+                                        <div class="invalid-feedback">
+                                            Seleccione un estado
+                                        </div>
                                     </div>
                                 </div>
 
@@ -158,6 +193,9 @@
                                         <select name="localidad" class="form-input backend-data form-select" required>
                                             <option value="" hidden>Selecciona</option>
                                         </select>
+                                        <div class="invalid-feedback">
+                                            Seleccione una localidad
+                                        </div>
                                     </div>
                                 </div>
 
@@ -167,6 +205,9 @@
                                         <select name="categoria" class="form-input backend-data form-select" required>
                                             <option value="" hidden>Selecciona</option>
                                         </select>
+                                        <div class="invalid-feedback">
+                                            Seleccione una categoría
+                                        </div>
                                     </div>
                                 </div>
 
@@ -179,10 +220,17 @@
                                 <div class="col-md-6 col-sm-12 py-1">
                                     <input name="imagen1" type="text" class="img-input form-control mb-1"
                                         placeholder="Ingresa URL de una imagen" required>
+                                    <div class="invalid-feedback">
+                                        Ingrese una URL válida
+                                    </div>
                                 </div>
+
                                 <div class="col-md-6 col-sm-12 py-1">
                                     <input name="imagen2" type="text" class="img-input form-control mb-1"
                                         placeholder="Ingresa URL de una imagen" required>
+                                    <div class="invalid-feedback">
+                                        Ingrese una URL válida
+                                    </div>
                                 </div>
                             </div>
 
@@ -190,10 +238,17 @@
                                 <div class="col-md-6 col-sm-12 py-1">
                                     <input name="imagen3" type="text" class="img-input form-control mb-1"
                                         placeholder="Ingresa URL de una imagen" required>
+                                    <div class="invalid-feedback">
+                                        Ingrese una URL válida
+                                    </div>
                                 </div>
+
                                 <div class="col-md-6 col-sm-12 py-1">
                                     <input name="imagen4" type="text" class="img-input form-control mb-1"
                                         placeholder="Ingresa URL de una imagen" required>
+                                    <div class="invalid-feedback">
+                                        Ingrese una URL válida
+                                    </div>
                                 </div>
                             </div>
 
@@ -201,11 +256,21 @@
                             <hr>
                             <h5>Datos de contacto</h5>
 
-                            <input name="telefono" type="tel" class="form-input form-control mb-1"
-                                placeholder="Teléfono" required>
+                            <div class="my-2">
+                                <input name="telefono" type="tel" class="form-input form-control mb-1"
+                                    placeholder="Teléfono" required>
+                                <div class="invalid-feedback">
+                                    Ingrese un teléfono válido
+                                </div>
+                            </div>
 
-                            <input name="correo" type="email" class="form-input form-control mb-1" placeholder="Correo"
-                                required>
+                            <div class="my-2">
+                                <input name="correo" type="email" class="form-input form-control mb-1"
+                                    placeholder="Correo" required>
+                                <div class="invalid-feedback">
+                                    Ingrese un correo válido
+                                </div>
+                            </div>
 
                             <button type="submit" class="btn btn-success">Guardar</button>
                         </form>
@@ -242,6 +307,9 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <!-- =============================================================================================================== -->
     <script type="module" src="./js/formularioPropiedad.js"></script>
+    !-- ===============================================================================================================
+    -->
+    <script type="module" src="./js/validation/validationHandling.js"></script>
 </body>
 
 </html>
