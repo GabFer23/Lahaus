@@ -67,6 +67,5 @@ const handleSubmit = (e) => {
     images.push(input.value);
   });
 
-  console.log(propiedad);
-  // savePropiedad(propiedad, images);
+  savePropiedad(propiedad, images);
 };
