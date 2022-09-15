@@ -8,6 +8,10 @@ const getDataOptions = async (select, selected) => {
     showOptions(select, data, selected);
   } catch (error) {
     console.error(error);
+    Swal.fire({
+      icon: 'error',
+      text: `${error.message}`,
+    });
   }
 };
 
