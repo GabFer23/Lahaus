@@ -13,11 +13,17 @@ public class CategoriaService {
     @Autowired
     private CategoriaRepository categoriaRepository;
 
-    public List<Categoria> getAll() {
+    public List<Categoria> listAll() {
         return categoriaRepository.findAll(Sort.by("id"));
     }
+    public Categoria save(Categoria categoria) {
+        return categoriaRepository.save(categoria);
+    }
 
-    public Categoria get(int id) {
+    public Categoria getById(int id) {
         return categoriaRepository.findById(id).get();
+    }
+    public void delete(int id) {
+        categoriaRepository.deleteById(id);
     }
 }
