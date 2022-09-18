@@ -171,32 +171,29 @@ section ul li button {
     cursor: pointer;
 }
 
+.informacion,
+.atencion{
+    padding: 10px;
+}
+
 .informacion h2,
 .atencion h2 {
     margin: 75px auto;
     font-size: 4rem;
 }
 
-.informacion>ul,
-.atencion>ul {
-    width: 60%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;
+.informacion ul,
+.atencion ul {
+    display: grid;
+    gap: 20px;
+    padding: 10px 0;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
-.informacion ul li,
-.atencion ul li {
-    width: 100%;
-}
-
-.informacion>ul li img,
-.atencion>ul li img {
-    width: 120px;
-    height: 120px;
-    margin-bottom: 15px;
+.informacion>ul li i,
+.atencion>ul li i {
+    font-size: clamp(20px, 50px, 6vw);
+    padding: 5px;
 }
 
 .atencion {
@@ -392,6 +389,7 @@ footer>div>p {
     padding-right: 160px;
 }
 
+
 .lahaus-logo-titulo {
     display: flex;
     padding-left: 150px;
@@ -423,8 +421,9 @@ footer hr {
     padding: 15px 200px;
 }
 
-.lista-redes li a img {
-    width: 28px;
+.lista-redes li a i{
+    color: #000;
+    font-size: clamp(15px, 25px, 4vw);
 }
 
 /* Responsive */

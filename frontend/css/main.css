@@ -20,11 +20,6 @@ a>* {
     box-shadow: none !important;
 }
 
-.form-control:focus,
-.form-select:focus {
-    border-color: #212529 !important;
-}
-
 .filter-form .form-control,
 .filter-form .form-select,
 .filter-form .btn,

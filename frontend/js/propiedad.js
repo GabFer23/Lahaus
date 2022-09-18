@@ -1,33 +1,37 @@
-import { lahausApi } from './api/index.js';
-import { showMessage } from './helpers/index.js';
+import {
+  showSpinner,
+  removeSpinner,
+  showMessage,
+  remove,
+  getById,
+} from './helpers/index.js';
 
 const urlParams = new URLSearchParams(window.location.search);
 const mainContent = document.querySelector('#main-content');
 
 const idPropiedad = urlParams.get('id');
 
-window.addEventListener('DOMContentLoaded', () => {
-  getPropiedad();
-});
+window.addEventListener('DOMContentLoaded', () => getPropiedad());
 
 mainContent.addEventListener('click', (e) => {
-  if (e.target.id === 'btn-eliminar') {
-    console.log(e.target.id)
-  }
+  if (e.target.id === 'btn-eliminar') deletePropiedad();
 });
 
 // !===============================================================================
 
 const getPropiedad = async () => {
-  try {
-    const { data } = await lahausApi.get(`/propiedad/${idPropiedad}`);
+  showSpinner(mainContent);
 
-    showPropiedad(data);
-  } catch (error) {
-    console.error(error);
-    showMessage(mainContent,`Se produjo un error:  ${error.message}`,'alert-danger');
+  const { data: propiedad, error } = await getById('propiedad', idPropiedad);
+
+  if (error) {
+    removeSpinner(mainContent);
+    return showMessage(mainContent, error.message, 'alert-danger');
   }
 
+  showPropiedad(propiedad);
+
+  removeSpinner(mainContent);
 };
 
 // !===============================================================================
@@ -60,13 +64,16 @@ const showPropiedad = ({
             <h3 class="text-capitalize">${titulo}</h3>
             <h5 class="text-capitalize text-muted">
                 ${direccion},
-                <strong class="text-black">${localidad.nombre}</strong>
+                <strong class="text-black">
+                    ${localidad.nombre}
+                </strong>
             </h5>
             <h5 class="text-end">
                 <small class="text-muted d-block">Precio</small>
                 <strong class="my-1">
                     <i class="fa-solid fa-dollar-sign"></i> 
-                    ${precio.toLocaleString('es-CO')}</strong>
+                    ${precio.toLocaleString('es-CO')}
+                </strong>
             </h5>
             <div class="col-md-6 col-sm-12">
 
@@ -92,11 +99,13 @@ const showPropiedad = ({
                         class="btn btn-outline-primary" 
                         id="btn-editar"
                         >
-                        <i class="fa-solid fa-pen-to-square"></i>
+                            <i class="fa-solid fa-pen-to-square"></i>
                     </a>
-                    <a href="#" class="btn btn-outline-danger" id="btn-eliminar">
-                        <i class="fa-solid fa-trash-can"></i>
-                    </a>
+                    <button 
+                        class="btn btn-outline-danger" 
+                        id="btn-eliminar">
+                            <i class="fa-solid fa-trash-can"></i>
+                    </button>
                 </div>
             </div>
 
@@ -204,3 +213,25 @@ const showImages = (i, imagen, titulo, carouselInner) => {
 };
 
 // !===============================================================================
+
+const deletePropiedad = async () => {
+  const result = await Swal.fire({
+    icon: 'question',
+    title: '¿Deseas eliminar esta propiedad?',
+    showCancelButton: true,
+    confirmButtonText: 'Eliminar',
+    allowOutsideClick: false,
+  });
+
+  if (!result.isConfirmed) return;
+
+  await remove('propiedad', idPropiedad);
+
+  Swal.fire({
+    icon: 'success',
+    title: 'Propiedad eliminada',
+    showConfirmButton: true,
+    allowOutsideClick: false,
+    didClose: () => (window.location.href = 'index.html'),
+  });
+};
