@@ -124,7 +124,15 @@ const handleSubmit = async (e) => {
 // !================================================================================
 
 const editLocalidad = async (target) => {
-  const data = await getById('localidad', target.dataset.id);
+  const { data, error } = await getById('localidad', target.dataset.id);
+
+  if (error) {
+    Swal.fire({
+      icon: 'error',
+      title: 'error',
+      text: error.message,
+    });
+  }
 
   inputs.forEach((input) => (input.value = data[input.name]));
 };
