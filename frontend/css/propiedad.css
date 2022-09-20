@@ -5,3 +5,7 @@
     object-fit: cover;
     object-position: center;
 }
+
+#main-content{
+    min-height: 80vh;
+}

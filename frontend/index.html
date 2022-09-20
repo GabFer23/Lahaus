@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,25 +8,52 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!-- =============================================================================================================== -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous"> -->
+    <!-- =============================================================================================================== -->
     <link rel="stylesheet" href="./css/style.css">
     <title>Lahaus Inversiones</title>
 </head>
+
 <body>
     <header>
         <ul class="navbar-left">
-            <li><a href="#"><img src="./assets/icons/home-icon.png" alt="Icono Lahaus inversiones"><p>Lahaus Inversiones</p></a></li>
+            <li>
+                <a href="#">
+                    <img src="./assets/icons/home-icon.png" alt="Icono Lahaus inversiones">
+                    <p>Lahaus Inversiones</p>
+                </a>
+            </li>
         </ul>
         <ul class="navbar-right">
-            <li><a href="./compras.html"><img src="./assets/icons/shopping.png" alt=" Icono carrito de compras"><p>Comprar Inmuebles</p></a></li>
-            <li><a href="./ventas.html"><img src="./assets/icons/sell.png" alt="Icono ventas"><p>Vender propiedades</p> </a></li>
-            <li><a href="#"><img src="./assets/icons/job.png" alt="Icono empleabilidad"><p>Preguntas Frecuentes</p></a></li>
-        </ul>   
+            <li>
+                <a href="./compras.html">
+                    <img src="./assets/icons/shopping.png" alt=" Icono carrito de compras">
+                    <p>Comprar Inmuebles</p>
+                </a>
+            </li>
+            <li>
+                <a href="./formulario-propiedad.html">
+                    <img src="./assets/icons/sell.png" alt="Icono ventas">
+                    <p>Vender propiedades</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./assets/icons/job.png" alt="Icono empleabilidad">
+                    <p>Preguntas Frecuentes</p>
+                </a>
+            </li>
+        </ul>
     </header>
+
     <main>
         <section class="hero">
             <h1>Un paso más cerca de la casa de tus sueños</h1>
             <ul>
-                <li class="primer-li"><img src="./assets/icons/search.png" alt="Icono lupa"><input type="text" placeholder="Busca por localidad o barrio"></li>
+                <li class="primer-li"><img src="./assets/icons/search.png" alt="Icono lupa"><input type="text"
+                        placeholder="Busca por localidad o barrio"></li>
                 <li>
                     <select id="tipoPropiedades">
                         <option value="1">Apartamento</option>
@@ -48,17 +76,17 @@
             <h2>Nuestros beneficios</h2>
             <ul>
                 <li>
-                   <img src="./assets/img/quality.png" alt="Imagen alta calidad">
-                   <h3>Calidad</h3>
-                   <p>Manejamos los más altos estándares a la hora de escoger tus propiedades</p> 
+                    <i class="fa-regular fa-square-check"></i>
+                    <h3>Calidad</h3>
+                    <p>Manejamos los más altos estándares a la hora de escoger tus propiedades</p>
                 </li>
                 <li>
-                    <img src="./assets/img/customerservice.png" alt="Icono servicio al cliente">
+                    <i class="fa-solid fa-users"></i>
                     <h3>Acompañamiento</h3>
                     <p>Te acompañamos en cada etapa, desde la búsqueda hasta la compra de tu casa</p>
                 </li>
                 <li>
-                    <img src="./assets/img/247.png" alt="Icono 24/7">
+                    <i class="fa-solid fa-clock"></i>
                     <h3>Disponibilidad</h3>
                     <p>Contamos con líneas de atención las 24 horas del día, los 365 días del año</p>
                 </li>
@@ -68,17 +96,17 @@
             <h2>Canales de atención</h2>
             <ul>
                 <li>
-                   <img src="./assets/icons/whatsapp.png" alt="Icono whatsapp">
-                   <h3>Whatsapp</h3>
-                   <p>Comunícate con un asesor en la línea 3014924324</p> 
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <h3>Whatsapp</h3>
+                    <p>Comunícate con un asesor en la línea 3014924324</p>
                 </li>
                 <li>
-                    <img src="./assets/icons/mail.png" alt="Icono email">
+                    <i class="fa-solid fa-envelope"></i>
                     <h3>Correo</h3>
                     <p>Envíanos un mail a lahausinversiones@utp.com.co</p>
                 </li>
                 <li>
-                    <img src="./assets/icons/googlemaps.png" alt="Icono google maps">
+                    <i class="fa-solid fa-map-location-dot"></i>
                     <h3>Punto físico</h3>
                     <p>Estados ubicados en la calle lahaus #19-79, tercer piso</p>
                 </li>
@@ -87,20 +115,55 @@
     </main>
     <footer>
         <div>
-            <div class="lahaus-logo-titulo"><img src="./assets/icons/home-icon.png" alt="Icono Lahaus inversiones"><h2>Lahaus Inversiones</h2></div>
+            <div class="lahaus-logo-titulo">
+                <img src="./assets/icons/home-icon.png" alt="Icono Lahaus inversiones">
+                <h2>Lahaus Inversiones</h2>
+            </div>
             <p>Lahaus inversiones Colombia</p>
         </div>
         <hr>
         <div>
             <ul class="lista-redes">
-                <li><a href="https://twitter.com/" target="_blank"><img src="./assets/icons/twitter.png" alt="Icono Twitter"></a></li>
-                <li><a href="https://github.com/josanchezm" target="_blank"><img src="./assets/icons/github.png" alt="Icono Github"></a></li>
-                <li><a href="https://www.whatsapp.com/" target="_blank"><img src="./assets/icons/wa2.png" alt="Icono Whatsapp"></a></li>
-                <li><a href="https://www.linkedin.com/" target="_blank"><img src="./assets/icons/linkedin.png" alt="Icono Linkedin"></a></li>
+                <li>
+                    <a href="https://twitter.com/" target="_blank">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://github.com/josanchezm" target="_blank">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.whatsapp.com/" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.linkedin.com/" target="_blank">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                </li>
             </ul>
             <p>Calle lahaus #19-79, tercer piso <br> lahausinversiones@utp.com.co</p>
         </div>
     </footer>
+
+    <!-- =============================================================================================================== -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script> -->
+    <!-- =============================================================================================================== -->
+    <script src="https://kit.fontawesome.com/fa3e4e2358.js" crossorigin="anonymous"></script>
+    <!-- =============================================================================================================== -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- =============================================================================================================== -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- =============================================================================================================== -->
     <script src="./js/index.js"></script>
 </body>
+
 </html>
