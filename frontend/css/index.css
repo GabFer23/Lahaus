@@ -1,0 +1,38 @@
+.hero-container {
+    height: 70vh;
+    min-height: 400px;
+    max-height: 900px;
+    background-size: cover;
+    background-position: center;
+    background-image: url("/assets/img/hero.jpg");
+    position: relative;
+    isolation: isolate;
+}
+
+.hero-container::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background-image: linear-gradient(to top, #fff 5%, #212529 70%);
+    opacity: .7;
+}
+
+.cards-container {
+    display: grid;
+    gap: 20px;
+    padding: 10px 0;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+}
+
+.card img {
+    height: 15vw;
+    width: 100%;
+    max-height: 350px;
+    min-height: 250px;
+    object-fit: cover;
+}
+
+#main-container{
+    min-height: 45vh;
+}

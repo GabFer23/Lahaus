@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" xmlns:th="https://www.thymeleaf.org/">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lahaus | Inicio</title>
+    <!-- =============================================================================================================== -->
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/spinner.css">
+    <!-- =============================================================================================================== -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- =============================================================================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&family=Shadows+Into+Light&display=swap"
+        rel="stylesheet">
+    <!-- =============================================================================================================== -->
+</head>
+
+<body>
+    <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Lahaus Inversiones</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="formulario-propiedad.html">Vender Propiedad</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="localidades.html">Localidades</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero-container d-flex justify-content-center align-items-center">
+        <div class="position-absolute">
+            <h1 class="text-white text-center mb-3">Un paso más cerca de la casa de tus sueños</h1>
+            <div class="col-lg-12">
+                <form class="filter-form d-grid gap-1 px-4 py-3 bg-white mx-3" id="search-form">
+
+                    <div class="filter-form__inner">
+
+                        <div class="form-floating">
+                            <input type="number" name="min" class="form-input form-input form-control" id="txtMin"
+                                placeholder="Precio mínimo" min="0">
+                            <label for="txtMin">Precio mínimo</label>
+                        </div>
+
+                        <div class="form-floating">
+                            <input type="number" name="max" class="form-input form-input form-control"
+                                placeholder="Precio máximo" id="txtMax" min="0">
+                            <label for="txtMax">Precio máximo</label>
+                        </div>
+
+                    </div>
+
+                    <div class="d-flex justify-content-center gap-1">
+
+                        <div>
+                            <input type="search" name="q" id="" class="form-input form-control" placeholder="Buscar..."
+                                value="">
+                        </div>
+
+                        <div>
+                            <select name="categoria" class="form-input backend-data form-select">
+                                <option value="0">Categoría</option>
+                            </select>
+                        </div>
+
+                        <div class="xs-none">
+                            <select name="habitaciones" class="form-input generated-data form-select" required>
+                                <option value="0">Habitaciones</option>
+                            </select>
+                        </div>
+
+                        <div class="xs-none">
+                            <select name="wc" class="form-input generated-data form-select" required>
+                                <option value="0">Baños</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <button type="submit" class="btn btn-dark w-100"><i
+                                    class="fa-solid fa-magnifying-glass"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="filter-form__inner">
+
+                        <div>
+                            <select name="localidad" class="form-input backend-data form-select">
+                                <option value="0">Localidad</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <select name="estrato" class="form-input generated-data form-select" required>
+                                <option value="0">Estrato</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <select name="objetivo" class="form-input backend-data form-select">
+                                <option value="0">En Venta/Aquiler</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <select name="estado" class="form-input backend-data form-select">
+                                <option value="0">Estado</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="container py-5" id="main-container">
+
+        <div class="cards-container" id="propiedades-container">
+
+        </div>
+
+    </div>
+
+
+    <main class="container">
+        <div class="row py-2">
+            <h2 class="text-center">Nuestros beneficios</h2>
+            <div class="col-md-4 col-sm-12 text-center p-2">
+                <i class="fa-regular fa-square-check fs-1 my-3"></i>
+                <h3>Calidad</h3>
+                <p>Manejamos los más altos estándares a la hora de escoger tus propiedades</p>
+            </div>
+            <div class="col-md-4 col-sm-12 text-center p-2">
+                <i class="fa-solid fa-users fs-1 my-3"></i>
+                <h3>Acompañamiento</h3>
+                <p>Te acompañamos en cada etapa, desde la búsqueda hasta la compra de tu casa</p>
+            </div>
+            <div class="col-md-4 col-sm-12 text-center p-2">
+                <i class="fa-solid fa-clock fs-1 my-3"></i>
+                <h3>Disponibilidad</h3>
+                <p>Contamos con líneas de atención las 24 horas del día, los 365 días del año</p>
+            </div>
+        </div>
+
+        <div class="row py-2">
+            <h2 class="text-center">Canales de atención</h2>
+            <div class="col-md-4 col-sm-12 text-center p-2">
+                <i class="fa-brands fa-whatsapp fs-1 my-3"></i>
+                <h3>Whatsapp</h3>
+                <p>Comunícate con un asesor en la línea 3014924324</p>
+            </div>
+            <div class="col-md-4 col-sm-12 text-center p-2">
+                <i class="fa-solid fa-envelope fs-1 my-3"></i>
+                <h3>Correo</h3>
+                <p>Envíanos un mail a lahausinversiones@utp.com.co</p>
+            </div>
+            <div class="col-md-4 col-sm-12 text-center p-2">
+                <i class="fa-solid fa-map-location-dot fs-1 my-3"></i>
+                <h3>Punto físico</h3>
+                <p>Estados ubicados en la calle lahaus #19-79, tercer piso</p>
+            </div>
+        </div>
+    </main>
+
+
+    <footer>
+        <div class="py-3 my-4">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item">
+                    <a href="#" class="nav-link px-2 text-muted fs-4">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link px-2 text-muted fs-4">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link px-2 text-muted fs-4">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link px-2 text-muted fs-4">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link px-2 text-muted fs-4">
+
+                    </a>
+                </li>
+            </ul>
+            <p class="text-center text-muted">© 2022 Company, Inc</p>
+        </div>
+
+    </footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+    <!-- =============================================================================================================== -->
+    <script src="https://kit.fontawesome.com/fa3e4e2358.js" crossorigin="anonymous"></script>
+    <!-- =============================================================================================================== -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- =============================================================================================================== -->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <!-- =============================================================================================================== -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- =============================================================================================================== -->
+    <script type="module" src="/js/index.js"></script>
+</body>
+
+</html>
