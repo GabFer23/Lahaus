@@ -1,4 +1,4 @@
-export let params = {
+export let paramsPropiedades = {
   page: 1,
   pageSize: 10,
   sortField: 'fechaCreacion',

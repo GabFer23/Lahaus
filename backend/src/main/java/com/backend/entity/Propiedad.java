@@ -44,7 +44,7 @@ public class Propiedad {
     private int wc;
 
     @Column(nullable = false)
-    private int precio;
+    private float precio;
 
     @ManyToOne
     @JoinColumn(name = "id_Objetivo")
@@ -54,7 +54,7 @@ public class Propiedad {
     private String direccion;
 
     @Column(nullable = false)
-    private int area;
+    private double area;
 
     @Column(nullable = false)
     private int estrato;
