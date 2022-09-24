@@ -100,6 +100,15 @@ const getSearch = async () => {
 
   const { content: propiedades, first, last, totalPages, totalElements } = data;
 
+  resultTexts.innerHTML = `
+    <b class="d-block fs-4">
+      ${params.q}
+    </b>
+    <small class="text-muted">
+      ${totalElements} Resultado${totalElements === 1 ? '' : 's'}
+    </small>
+  `;
+
   if (totalElements === 0) {
     removeSpinner(searchContainer);
     return showMessage(
@@ -112,15 +121,6 @@ const getSearch = async () => {
   removeSpinner(searchContainer);
 
   generatePagination(paginationContainer, params, totalPages, first, last);
-
-  resultTexts.innerHTML = `
-    <b class="d-block fs-4">
-      ${params.q}
-    </b>
-    <small class="text-muted">
-      ${totalElements} Resultado${totalElements === 1 ? '' : 's'}
-    </small>
-  `;
 
   propiedades.forEach(showSearchedPropiedades);
 };
