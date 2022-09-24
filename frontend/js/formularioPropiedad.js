@@ -99,12 +99,6 @@ const handleSubmit = async (e) => {
     if (inputs[i].value === '') return;
 
     if (
-      inputs[i].type === 'number' &&
-      Number(inputs[i].value) !== parseInt(inputs[i].value)
-    )
-      return;
-
-    if (
       inputs[i].type === 'number' ||
       (inputs[i].localName === 'select' &&
         inputs[i].classList.contains('generated-data'))
@@ -125,6 +119,7 @@ const handleSubmit = async (e) => {
 
     propiedad[inputs[i].name] = inputs[i].value.trim();
   }
+
 
   for (let i = 0; i < imgInputs.length; i++) {
     if (imgInputs[i].value === '') return;

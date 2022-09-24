@@ -135,3 +135,28 @@ const showPropiedades = ({
 };
 
 // !=======================================================================================================
+
+const handleSearch = (e) => {
+  e.preventDefault();
+
+  for (let i = 0; i < inputs.length; i++) {
+    if (inputs[i].type === 'number' || inputs[i].localName === 'select') {
+      params[inputs[i].name] = Number(inputs[i].value);
+      continue;
+    }
+
+    params[inputs[i].name] = inputs[i].value.trim();
+  }
+
+  localStorage.setItem('params', JSON.stringify(params));
+
+  // let searchUrl = 'buscar.html';
+
+  // Object.entries(params).forEach(([key, value], i) => {
+  //   searchUrl += (i > 0 ? '&' : '?') + key + '=' + value;
+  // });
+
+  window.location.href = 'buscar.html';
+};
+
+// !=======================================================================================================
