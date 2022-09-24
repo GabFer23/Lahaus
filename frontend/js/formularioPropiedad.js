@@ -132,8 +132,6 @@ const handleSubmit = async (e) => {
     idImgs.push(imgInputs[i].id);
   }
 
-  console.log({ propiedad, images });
-
   if (idPropiedad) {
     actualizarPropiedad(propiedad, idImgs, images);
     return;
