@@ -23,7 +23,7 @@ const backendDataSelect = document.querySelectorAll('.backend-data');
 // !=======================================================================================================
 
 window.addEventListener('DOMContentLoaded', () => {
-  params = paramsPropiedades;
+  params = { ...paramsPropiedades };
   generatedDataSelect.forEach((select) => generarOptions(select));
 
   backendDataSelect.forEach((select) => getDataOptions(select));
@@ -53,7 +53,11 @@ const getPropiedades = async () => {
 
   if (propiedades.length === 0) {
     removeSpinner(mainContainer);
-    return showMessage(mainContainer, 'No hay propiedades registradas', 'alert-info');
+    return showMessage(
+      mainContainer,
+      'No hay propiedades registradas',
+      'alert-info'
+    );
   }
 
   const announcement = document.createElement('span');
@@ -96,7 +100,7 @@ const showPropiedades = ({
 
             <div class="card-body">
                 <small class="text-muted d-block">
-                ${dayjs(fechaCreacion).format('DD-MM-YYYY hh:mm A')}
+                ${dayjs().to(dayjs(fechaCreacion))}
                 </small>
                 <span class="badge rounded-pill text-bg-dark">
                 ${estado.nombre}
