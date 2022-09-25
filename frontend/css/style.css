@@ -55,7 +55,7 @@ p {
 header {
     display: flex;
     justify-content: space-between;
-    padding: 15px 60px;
+    padding: 25px 60px 15px 60px;
 }
 
 header ul {
@@ -71,7 +71,7 @@ header ul li {
 
 header ul li a {
     display: flex;
-    align-items: center;
+    align-items: start;
     gap: 10px;
     color: #000;
     transition-duration: .4s;
@@ -185,9 +185,16 @@ section ul li button {
 .informacion ul,
 .atencion ul {
     display: grid;
-    gap: 20px;
+    gap: 75px;
     padding: 10px 0;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.informacion>ul li,
+.atencion>ul li {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .informacion>ul li i,
@@ -250,6 +257,7 @@ section ul li button {
 
 .contenedor-casas-lista>img {
     width: 260px;
+    height: 180px;
 }
 
 .specs-casa {
