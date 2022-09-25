@@ -6,7 +6,7 @@ const getDataOptions = async (select, selected) => {
     const { data, error } = await getAll(select.name);
 
     if (error) {
-      return Swal.fire({
+      Swal.fire({
         icon: 'error',
         title: `${select.name} no puedo cargar`,
         text: error.message,

@@ -99,12 +99,6 @@ const handleSubmit = async (e) => {
     if (inputs[i].value === '') return;
 
     if (
-      inputs[i].type === 'number' &&
-      Number(inputs[i].value) !== parseInt(inputs[i].value)
-    )
-      return;
-
-    if (
       inputs[i].type === 'number' ||
       (inputs[i].localName === 'select' &&
         inputs[i].classList.contains('generated-data'))
@@ -126,10 +120,12 @@ const handleSubmit = async (e) => {
     propiedad[inputs[i].name] = inputs[i].value.trim();
   }
 
-  imgInputs.forEach((input) => {
-    images.push(input.value);
-    idImgs.push(input.id);
-  });
+
+  for (let i = 0; i < imgInputs.length; i++) {
+    if (imgInputs[i].value === '') return;
+    images.push(imgInputs[i].value);
+    idImgs.push(imgInputs[i].id);
+  }
 
   if (idPropiedad) {
     actualizarPropiedad(propiedad, idImgs, images);
