@@ -13,18 +13,8 @@ public class EstadoService {
     @Autowired
     private EstadoRepository estadoRepository;
 
-    public List<Estado> listAll() {
+    public List<Estado> getAll() {
         return estadoRepository.findAll(Sort.by("id"));
     }
-    public Estado save(Estado estado) {
-        return estadoRepository.save(estado);
-    }
-        
-    public Estado getById(int id) {
-        return estadoRepository.findById(id).get();
-    }
-    public void delete(int id) {
-        estadoRepository.deleteById(id);
-    } 
 
 }

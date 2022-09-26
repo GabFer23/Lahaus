@@ -5,4 +5,10 @@ const showMessage = (container, message, type) => {
   container.appendChild(divMessage);
 };
 
-export { showMessage };
+const removeMessage = (container, type) => {
+  const divMessage = container.querySelector(`.${type}`);
+
+  if (divMessage) divMessage.remove();
+};
+
+export { showMessage, removeMessage };

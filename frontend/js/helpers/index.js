@@ -6,3 +6,4 @@ export * from './spinnerHandler.js';
 export * from './requestHandler.js';
 export * from './cleanContainer.js';
 export * from './paginationHandler.js';
+export * from './buttonHandler.js';

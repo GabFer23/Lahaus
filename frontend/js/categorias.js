@@ -8,12 +8,14 @@ import {
   getAll,
   cleanContainer,
   showMessage,
+  removeMessage,
+  disableButtons,
+  enableButtons,
 } from './helpers/index.js';
 // !================================================================================
 
 const mainContainer = document.querySelector('#main-container');
 const form = document.querySelector('#categorias-form');
-const btnNuevo = document.querySelector('#btn-nuevo');
 const inputs = form.querySelectorAll('input');
 const modal = document.querySelector('#saveCategoria');
 const listContainer = document.querySelector('.list-container');
@@ -39,8 +41,10 @@ mainContainer.addEventListener('click', ({ target }) => {
 // !================================================================================
 
 const getCategorias = async () => {
-  btnNuevo.disabled = true;
+  disableButtons();
   cleanContainer(listContainer);
+
+  removeMessage(mainContainer, 'alert');
 
   showSpinner(mainContainer);
 
@@ -52,7 +56,7 @@ const getCategorias = async () => {
     return showMessage(mainContainer, error.message, 'alert-danger');
   }
 
-  btnNuevo.disabled = false;
+  enableButtons();
 
   if (categorias.length === 0) {
     removeSpinner(mainContainer);
@@ -99,6 +103,7 @@ const showCategoria = ({ id, nombre }) => {
 
 const handleSubmit = async (e) => {
   e.preventDefault();
+  disableButtons();
   const categoria = {};
 
   for (let i = 0; i < inputs.length; i++) {
@@ -124,7 +129,10 @@ const handleSubmit = async (e) => {
 // !================================================================================
 
 const editCategoria = async (target) => {
+  form.reset();
+  disableButtons();
   const { data, error } = await getById('categoria', target.dataset.id);
+  enableButtons();
 
   if (error) {
     Swal.fire({
@@ -150,7 +158,9 @@ const deleteCategoria = async (target) => {
 
   if (!result.isConfirmed) return;
 
+  disableButtons();
   await remove('categoria', target.dataset.id);
+  enableButtons();
 
   Swal.fire({
     icon: 'success',

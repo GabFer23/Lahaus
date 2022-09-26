@@ -8,12 +8,14 @@ import {
   getAll,
   cleanContainer,
   showMessage,
+  removeMessage,
+  enableButtons,
+  disableButtons,
 } from './helpers/index.js';
 // !================================================================================
 
 const mainContainer = document.querySelector('#main-container');
 const form = document.querySelector('#localidades-form');
-const btnNuevo = document.querySelector('#btn-nuevo');
 const inputs = form.querySelectorAll('input');
 const modal = document.querySelector('#saveLocalidad');
 const listContainer = document.querySelector('.list-container');
@@ -39,8 +41,10 @@ mainContainer.addEventListener('click', ({ target }) => {
 // !================================================================================
 
 const getLocalidades = async () => {
-  btnNuevo.disabled = true;
+  disableButtons();
   cleanContainer(listContainer);
+
+  removeMessage(mainContainer, 'alert');
 
   showSpinner(mainContainer);
 
@@ -52,7 +56,7 @@ const getLocalidades = async () => {
     return showMessage(mainContainer, error.message, 'alert-danger');
   }
 
-  btnNuevo.disabled = false;
+  enableButtons();
 
   if (localidades.length === 0) {
     removeSpinner(mainContainer);
@@ -99,6 +103,7 @@ const showLocalidad = ({ id, nombre }) => {
 
 const handleSubmit = async (e) => {
   e.preventDefault();
+  disableButtons();
   const localidad = {};
 
   for (let i = 0; i < inputs.length; i++) {
@@ -124,7 +129,10 @@ const handleSubmit = async (e) => {
 // !================================================================================
 
 const editLocalidad = async (target) => {
+  form.reset();
+  disableButtons();
   const { data, error } = await getById('localidad', target.dataset.id);
+  enableButtons();
 
   if (error) {
     Swal.fire({

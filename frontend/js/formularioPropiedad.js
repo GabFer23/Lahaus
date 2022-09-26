@@ -1,4 +1,6 @@
 import {
+  disableButtons,
+  enableButtons,
   generarOptions,
   getById,
   getDataOptions,
@@ -50,6 +52,7 @@ form.addEventListener('submit', (e) => handleSubmit(e));
 // !=======================================================================================
 
 const getPropiedad = async () => {
+  disableButtons();
   const { data: propiedad, error } = await getById('propiedad', idPropiedad);
 
   if (error) {
@@ -60,6 +63,7 @@ const getPropiedad = async () => {
   title.textContent = propiedad.titulo;
 
   showPropiedad(propiedad);
+  enableButtons();
 };
 
 // !=======================================================================================
@@ -91,6 +95,9 @@ const showPropiedad = (propiedad) => {
 
 const handleSubmit = async (e) => {
   e.preventDefault();
+
+  disableButtons();
+
   const propiedad = {};
   const images = [];
   const idImgs = [];
@@ -119,7 +126,6 @@ const handleSubmit = async (e) => {
 
     propiedad[inputs[i].name] = inputs[i].value.trim();
   }
-
 
   for (let i = 0; i < imgInputs.length; i++) {
     if (imgInputs[i].value === '') return;
