@@ -103,7 +103,6 @@ const showCategoria = ({ id, nombre }) => {
 
 const handleSubmit = async (e) => {
   e.preventDefault();
-  disableButtons();
   const categoria = {};
 
   for (let i = 0; i < inputs.length; i++) {
@@ -111,6 +110,8 @@ const handleSubmit = async (e) => {
 
     categoria[inputs[i].name] = inputs[i].value.trim();
   }
+
+  disableButtons();
 
   if (categoria.id === 'null') {
     const { id, ...dataCategoria } = categoria;

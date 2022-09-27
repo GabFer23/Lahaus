@@ -103,7 +103,6 @@ const showLocalidad = ({ id, nombre }) => {
 
 const handleSubmit = async (e) => {
   e.preventDefault();
-  disableButtons();
   const localidad = {};
 
   for (let i = 0; i < inputs.length; i++) {
@@ -111,6 +110,8 @@ const handleSubmit = async (e) => {
 
     localidad[inputs[i].name] = inputs[i].value.trim();
   }
+
+  disableButtons();
 
   if (localidad.id === 'null') {
     const { id, ...dataLocalidad } = localidad;

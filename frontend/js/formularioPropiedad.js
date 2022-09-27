@@ -96,8 +96,6 @@ const showPropiedad = (propiedad) => {
 const handleSubmit = async (e) => {
   e.preventDefault();
 
-  disableButtons();
-
   const propiedad = {};
   const images = [];
   const idImgs = [];
@@ -132,6 +130,8 @@ const handleSubmit = async (e) => {
     images.push(imgInputs[i].value);
     idImgs.push(imgInputs[i].id);
   }
+
+  disableButtons();
 
   if (idPropiedad) {
     actualizarPropiedad(propiedad, idImgs, images);
