@@ -2,6 +2,7 @@ package com.backend.controller;
 
 import com.backend.entity.Imagen;
 import com.backend.service.ImagenService;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +21,7 @@ public class ImagenController {
     private ImagenService imagenService;
 
     @PostMapping
-    public ResponseEntity<?> guardarImagen(@RequestBody Imagen imagen) {
+    public ResponseEntity<?> guardarImagen(@RequestBody @Valid Imagen imagen) {
         try {
 
             imagenService.save(imagen);
@@ -32,7 +33,7 @@ public class ImagenController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> actualizarPropiedad(@PathVariable Integer id, @RequestBody Imagen imagen) {
+    public ResponseEntity<?> actualizarPropiedad(@PathVariable Integer id, @RequestBody @Valid Imagen imagen) {
         try {
             Imagen imagenExistente = imagenService.get(id);
 

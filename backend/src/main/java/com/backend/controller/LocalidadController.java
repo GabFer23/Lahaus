@@ -3,6 +3,7 @@ package com.backend.controller;
 import com.backend.entity.Localidad;
 import com.backend.service.LocalidadService;
 import java.util.List;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -40,7 +41,7 @@ public class LocalidadController {
 
     // ==============================================================================
     @PostMapping
-    public ResponseEntity<?> registrarLocalidad(@RequestBody Localidad localidad) {
+    public ResponseEntity<?> registrarLocalidad(@RequestBody @Valid Localidad localidad) {
         try {
 
             Localidad localidadGuardada = localidadService.save(localidad);
@@ -53,7 +54,7 @@ public class LocalidadController {
 
     // ==============================================================================
     @PutMapping("/{id}")
-    public ResponseEntity<?> actualizarLocalidad(@PathVariable int id, @RequestBody Localidad localidad) {
+    public ResponseEntity<?> actualizarLocalidad(@PathVariable int id, @RequestBody @Valid Localidad localidad) {
         try {
             Localidad localidadExistente = localidadService.getById(id);
             localidadExistente.setNombre(localidad.getNombre());

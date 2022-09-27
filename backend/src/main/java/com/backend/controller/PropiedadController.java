@@ -2,6 +2,7 @@ package com.backend.controller;
 
 import com.backend.entity.Propiedad;
 import com.backend.service.PropiedadService;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.repository.query.Param;
@@ -80,7 +81,7 @@ public class PropiedadController {
 
     // ==============================================================================
     @PostMapping
-    public ResponseEntity<?> guardarPropiedad(@RequestBody Propiedad propiedad) {
+    public ResponseEntity<?> guardarPropiedad(@RequestBody @Valid Propiedad propiedad) {
         try {
 
             Propiedad propiedadGuardada = propiedadService.save(propiedad);
@@ -93,7 +94,7 @@ public class PropiedadController {
 
     // ==============================================================================
     @PutMapping("/{id}")
-    public ResponseEntity<?> actualizarPropiedad(@PathVariable int id, @RequestBody Propiedad propiedad) {
+    public ResponseEntity<?> actualizarPropiedad(@PathVariable int id, @RequestBody @Valid Propiedad propiedad) {
         try {
             Propiedad propiedadExistente = propiedadService.getById(id);
 

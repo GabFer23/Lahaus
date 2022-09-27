@@ -3,6 +3,7 @@ package com.backend.controller;
 import com.backend.entity.Categoria;
 import com.backend.service.CategoriaService;
 import java.util.List;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -39,7 +40,7 @@ public class CategoriaController {
 
     // ==============================================================================
     @PostMapping
-    public ResponseEntity<?> registrarCategoria(@RequestBody Categoria categoria) {
+    public ResponseEntity<?> registrarCategoria(@RequestBody @Valid Categoria categoria) {
         try {
 
             Categoria categoriaGuardada = categoriaService.save(categoria);
@@ -52,7 +53,7 @@ public class CategoriaController {
 
     // ==============================================================================
     @PutMapping("/{id}")
-    public ResponseEntity<?> actualizarCategoria(@PathVariable int id, @RequestBody Categoria categoria) {
+    public ResponseEntity<?> actualizarCategoria(@PathVariable int id, @RequestBody @Valid Categoria categoria) {
         try {
             Categoria categoriaExistente = categoriaService.getById(id);
             categoriaExistente.setNombre(categoria.getNombre());
