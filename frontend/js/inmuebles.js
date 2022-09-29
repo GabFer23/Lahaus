@@ -1,13 +1,12 @@
 const getPropiedad = async () => {
     try {
-        const res = await axios.get('http://localhost:8080/api/v1/propiedad?page=1&pageSize=10&sortField=fechaCreacion&sortDir=desc&q=&categoria=0&habitaciones=0&wc=0&estrato=0&objetivo=0&estado=0&localidad=0&min=0&max=0');
+        const res = await axios.get('https://lahaus-inversiones.herokuapp.com/api/v1/propiedad?page=1&pageSize=10&sortField=fechaCreacion&sortDir=desc&q=&categoria=0&habitaciones=0&wc=0&estrato=0&objetivo=0&estado=0&localidad=0&min=0&max=0');
         if(res.status === 200) {
             console.log(res); 
             let resultado = document.querySelector('#contenedor-casas-id');
-            let idVerPropiedad = res.data.content.length;
             for(let i = 0; i < res.data.content.length; i++) {
                 let estructura = `
-                <li class="contenedor-casas-lista" onclick="mostrarPropiedad(${idVerPropiedad})">
+                <li class="contenedor-casas-lista" onclick="mostrarPropiedad(${res.data.content[i].id})">
                     <img src="${res.data.content[i].imagenes[0].url}" alt="Vivienda">
                     <p>${res.data.content[i].titulo}</p>
                     <h3>En ${res.data.content[i].objetivo.nombre}</h3>
@@ -29,7 +28,6 @@ const getPropiedad = async () => {
                 </li>
                 `;
                 resultado.innerHTML += estructura;
-                idVerPropiedad--;
             }
         } else if(res.status === 401) {
             console.log(`API Invalida
@@ -49,4 +47,4 @@ const getPropiedad = async () => {
 
 getPropiedad();
 
-const mostrarPropiedad = (idPropiedad) => { open(`http://127.0.0.1:5500/frontend/propiedad.html?id=${idPropiedad}`); }
+const mostrarPropiedad = idPropiedad => open(`http://127.0.0.1:5500/frontend/propiedad.html?id=${idPropiedad}`);
