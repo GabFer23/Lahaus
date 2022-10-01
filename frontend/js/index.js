@@ -28,7 +28,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   backendDataSelect.forEach((select) => getDataOptions(select));
 
-  getPropiedades();
+  // getPropiedades();
 });
 
 // !=======================================================================================================
