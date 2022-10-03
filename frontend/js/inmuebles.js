@@ -1,5 +1,5 @@
 import { lahausApi, paramsPropiedades } from './api/index.js';
-import { showSpinner, removeSpinner } from './helpers/index.js';
+import { showSpinner, removeSpinner, showMessage } from './helpers/index.js';
 const mainContainer = document.querySelector('#main-container');
 const propiedadesContainer = document.querySelector('#propiedades-container');
 
@@ -8,6 +8,16 @@ const getPropiedad = async () => {
   try {
     let params = { ...paramsPropiedades };
     const res = await lahausApi.get('propiedad', { params });
+
+
+    if (res.data.totalElements === 0) {
+      removeSpinner(mainContainer);
+      return showMessage(
+        mainContainer,
+        'No hay propiedades registradas',
+        'alert-info'
+      );
+    }
 
     if (res.status === 200) {
       for (let i = 0; i < res.data.content.length; i++) {
@@ -47,6 +57,7 @@ const getPropiedad = async () => {
                 </a>
                 `;
         propiedadesContainer.innerHTML += estructura;
+
       }
     } else if (res.status === 401) {
       console.log(`API Invalida ${res}`);
@@ -58,6 +69,11 @@ const getPropiedad = async () => {
   } catch (error) {
     console.log(`Error con la peticion ${error}`);
   }
+  const announcement = document.createElement('span');
+  announcement.classList.add('badge', 'text-bg-success', 'text-uppercase');
+  announcement.textContent = 'Nuevas Propiedades';
+            
+  mainContainer.insertBefore(announcement, mainContainer.firstChild);
   removeSpinner(mainContainer);
 };
 

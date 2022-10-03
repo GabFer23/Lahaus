@@ -154,7 +154,7 @@ const showSearchedPropiedades = ({
           ${objetivo.nombre}
         </span>
         <img
-          src=${imagenes[0].url}
+          src=${imagenes[0]?.url}
           alt=${titulo}
         />
       </div>
