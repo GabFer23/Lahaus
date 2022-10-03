@@ -96,7 +96,7 @@ const showPropiedades = ({
             <span class="badge text-bg-primary position-absolute m-2 end-0">
             ${categoria.nombre}
               </span>
-            <img src=${imagenes[0].url} alt=${titulo}/>
+            <img src=${imagenes[0]?.url || '../assets/img/not-found.png'} alt=${titulo}/>
 
             <div class="card-body">
                 <small class="text-muted d-block">

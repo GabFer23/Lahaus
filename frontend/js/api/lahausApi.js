@@ -1,3 +1,3 @@
 export const lahausApi = axios.create({
-    baseURL: 'https://lahaus-inversiones.herokuapp.com/api/v1',
+    baseURL: 'http://localhost:8080/api/v1',
   });

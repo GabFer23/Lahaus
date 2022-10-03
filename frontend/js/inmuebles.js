@@ -19,7 +19,7 @@ const getPropiedad = async () => {
             <span class="badge text-bg-primary position-absolute m-2 end-0">
             ${res.data.content[i].categoria.nombre}
               </span>
-                    <img src="${res.data.content[i].imagenes[0].url}" alt="Vivienda" class="w-100">
+                    <img src="${res.data.content[i].imagenes[0]?.url || '../assets/img/not-found.png'}" alt="Vivienda" class="w-100">
 
                     <div class="card-body px-2">
                         <small class="text-muted d-block">

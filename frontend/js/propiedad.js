@@ -210,7 +210,7 @@ import {
     div.classList.add('carousel-item');
     i === 0 && div.classList.add('active');
   
-    div.innerHTML = `<img src=${imagen.url} class="d-block w-100" alt="${titulo}">`;
+    div.innerHTML = `<img src=${imagen?.url} class="d-block w-100" alt="${titulo}">`;
   
     carouselInner.appendChild(div);
   };
